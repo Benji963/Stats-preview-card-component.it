@@ -1,0 +1,130 @@
+:root {
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+  --Slightly-transparent-white-1: hsla(0, 0%, 100%, 0.75);
+  --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);
+  --ff-base: "Inter", sans-serif;
+  --ff-alt: "Lexend Deca", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--Very-dark-blue);
+  font-family: var(--ff-base);
+  min-height: 100vh;
+  display: grid;
+  font-size: 15px;
+  align-items: center;
+}
+
+.product {
+  /* background-color: aqua; */
+  max-width: 1020px;
+  margin: 0 auto;
+}
+
+.picture {
+  background-color: var(--Dark-desaturated-blue);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 2rem;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image {
+  position: relative;
+}
+
+.image::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--Soft-violet);
+  opacity: 0.5;
+}
+
+.info {
+  padding: 13%;
+}
+
+.title {
+  color: white;
+  font-weight: 700;
+  padding-bottom: 22px;
+  font-size: 2rem;
+}
+
+.title span {
+  color: var(--Soft-violet);
+}
+
+.discription {
+  color: var(--Slightly-transparent-white-1);
+  line-height: 1.8;
+}
+
+.stats {
+  padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.numbers {
+  color: white;
+  margin-bottom: 7px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.places {
+  color: var(--Slightly-transparent-white);
+}
+
+@media screen and (max-width: 425px) {
+  body {
+    text-align: center;
+  }
+
+  .picture {
+    grid-template-columns: 1fr;
+  }
+
+  .image {
+    order: -1;
+  }
+
+  .info {
+    padding: 12% 8%;
+  }
+
+  .title {
+    font-size: 23px;
+    line-height: 1.5;
+  }
+
+  .stats {
+    flex-direction: column;
+    padding-top: 30px;
+  }
+  .stats div {
+    margin-top: 20px;
+  }
+}
